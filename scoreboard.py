@@ -21,6 +21,7 @@ class Scoreboard(Turtle):
         self.score = 0
         self.update_score()
 
+
     def update_score(self):
         self.clear()
         self.write(f"Score: {self.score} | Highest Score: {self.highScore} \
