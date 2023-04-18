@@ -11,7 +11,7 @@ window.title("Space Invaders - Turtles")
 
 # Register the shape
 # turtle.register_shape("invader.gif")
-# turtle.register_shape("player.gif")
+turtle.register_shape("player.gif")
 
 # Draw border
 border_pen = turtle.Turtle()
@@ -39,15 +39,7 @@ scorestring = "SCORE: %s" % score
 score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 score_pen.hideturtle()
 
-# Create the player turtle
-player = turtle.Turtle()
-# player.shape("player.gif")
-player.penup()
-player.speed(0)
-player.setposition(0, -250)
-player.setheading(90)
-
-playerspeed = 15
+# player
 
 # Choose a number of enemies
 number_of_enemies = 10
@@ -69,52 +61,6 @@ for enemy in enemies:
     enemy.setposition(x, y)
 
 enemyspeed = 5
-
-# Creat the player's bullet
-bullet = turtle.Turtle()
-bullet.color("white")
-bullet.shape("triangle")
-bullet.penup()
-bullet.speed(0)
-bullet.setheading(90)
-bullet.shapesize(0.5, 0.5)
-bullet.hideturtle()
-
-bulletspeed = 30
-
-# define bullet state
-# ready - ready to fire
-# fire - bullet is firing
-bulletstate = "ready"
-
-
-# Move the player left and right
-def move_left():
-    x = player.xcor()
-    x -= playerspeed
-    if x < -280:
-        x = -280
-    player.setx(x)
-
-
-def move_right():
-    x = player.xcor()
-    x += playerspeed
-    if x > 280:
-        x = 280
-    player.setx(x)
-
-
-def fire_bullet():
-    # Declare bulletstate as a global if it needs changed
-    global bulletstate
-    if bulletstate == "ready":
-        bulletstate = "fire"
-        # Move the bullet to the just above the player
-        x = player.xcor()
-        y = player.ycor() + 10
-        bullet.setposition(x, y)
-        bullet.showturtle()
 
 
 # For collision between enemy and bullet
