@@ -2,6 +2,10 @@
 import turtle
 import math
 import random
+from scoreboard import Scoreboard
+from player import Player
+from bullet import Bullet
+from enemy import Enemy
 
 # Set up the game window screen
 window = turtle.Screen()
@@ -26,18 +30,7 @@ for side in range(4):
     border_pen.lt(90)
 border_pen.hideturtle()
 
-# Set the score to 0
-score = 0
-
-# Draw the pen
-score_pen = turtle.Turtle()
-score_pen.speed(0)
-score_pen.color("red")
-score_pen.penup()
-score_pen.setposition(-290, 280)
-scorestring = "SCORE: %s" % score
-score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
-score_pen.hideturtle()
+# scoreboard
 
 # player
 

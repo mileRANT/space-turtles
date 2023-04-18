@@ -1,5 +1,5 @@
 from turtle import Turtle
-
+BULLETSPEED = 30
 class Bullet(Turtle):
     def __init__(self):
         super().__init__()
@@ -11,5 +11,5 @@ class Bullet(Turtle):
         self.setheading(90)
         self.shapesize(0.5, 0.5)
         self.hideturtle()
-        self.bulletspeed = 30
+
 
