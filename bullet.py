@@ -12,12 +12,15 @@ class Bullet(Turtle):
         self.setheading(90)
         self.shapesize(0.5, 0.5)
         self.hideturtle()
+        print("bullet initialized")
 
-    def check_readyState(self, player):
+    def resetBullet(self, player, collision=False):
     # Check to see if the bullet has gone to the top
-        print("check player state: " & player.bulletstate)
-        if self.ycor() > 275:
+
+        # optional keyword argument so we can use this as a reset bullet state
+        if self.ycor() > 275 or (collision==True):
             self.hideturtle()
+            self.sety(player.ycor() - 50)
             player.ready_state()
             # bulletstate = "ready"
 
@@ -25,9 +28,9 @@ class Bullet(Turtle):
     def bulletFire(self, player):
     # # Move the bullet
         if player.bulletstate == "fire":
-            print("bulletfire moving")
+            # print("bulletfire moving")
             y = self.ycor()
             y += BULLETSPEED
             self.sety(y)
-            self.check_readyState(player)
+            self.resetBullet(player)
 

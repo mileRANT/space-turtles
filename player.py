@@ -36,7 +36,7 @@ class Player(Turtle):
     def fire_bullet(self):
         if self.bulletstate == "ready":
             self.bulletstate = "fire"
-            print (self.bulletstate)
+            # print (self.bulletstate)
             # Move the bullet to the just above the player
             x = self.xcor()
             y = self.ycor() + 10

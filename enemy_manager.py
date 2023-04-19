@@ -40,8 +40,9 @@ class EnemyManager():
                     y = e.ycor()
                     y -= 40
                     e.sety(y)
-                    if e.ycor() < -285: # and Game_Over == False:
-                        e.hideturtle()
+                    # if e.ycor() < -285: # and Game_Over == False:
+                    #     e.enemyReset()
+                        # e.hideturtle()
                         # missed_enemies += 1
                         # if missed_enemies == 5:
                         #     Game_Over = True

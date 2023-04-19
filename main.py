@@ -43,7 +43,24 @@ while True:
     enemy_manager.move_all_enemies()
     player.bullet.bulletFire(player)
     for enemy in enemy_manager.all_enemies:
-        enemy.isCollision_enemy_bullet(player.bullet)
-        enemy.isCollision_enemy_player(player)
+        # Game logic for collisions
+        # 1. Enemy x Bullet collision
+        if enemy.isCollision_enemy_bullet(player.bullet):
+            # Reset bullet
+            player.bullet.resetBullet(player, collision=True)   #reset the bullet which will hide the bullet and change player bullet state
+            # Reset the enemy
+            enemy.enemyReset()
+            #increase score
+            scoreboard.increase_score()
+        # 2. Enemy x Player collision
+        if enemy.isCollision_enemy_player(player):
+            Game_Over = True
+        if enemy.ycor() < -285:  # and Game_Over == False:
+            Game_Over = True
+        if Game_Over == True:
+            player.hideturtle()
+            for e in enemy_manager.all_enemies:
+                e.hideturtle()
+                break
 
 turtle.done

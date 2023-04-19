@@ -16,16 +16,15 @@ class Scoreboard(Turtle):
         self.penup()
         self.hideturtle()
         self.highScore = score
-        self.goto(x=-290, y=280)
-        self.lives = lives
+        self.goto(x=-290, y=300)
+        # self.lives = lives
         self.score = 0
         self.update_score()
 
 
     def update_score(self):
         self.clear()
-        self.write(f"Score: {self.score} | Highest Score: {self.highScore} \
-        | Lives: {self.lives}", align='left', font=FONT)
+        self.write(f"Score: {self.score} | Highest Score: {self.highScore}", align='left', font=FONT)
 
     def increase_score(self):
         self.score += 1

@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-FONT = ("Courier", 52, "normal")
+FONT = ("Courier", 36, "normal")
 FONT2 = ("Courier", 32, "normal")
 ALIGNMENT = 'center'
 COLOR = "white"
@@ -30,8 +30,8 @@ class UI(Turtle):
         self.clear()
         self.border()
         # self.goto(x=0, y=-150)
-        self.goto(x=430, y=235)
-        self.write('Space Invader', align=ALIGNMENT, font=FONT)
+        self.goto(x=0, y=335)
+        self.write('Turtle Invader', align=ALIGNMENT, font=FONT)
         # self.goto(x=0, y=-150)
         # # self.goto(x=0, y=-180)
         # self.write('Press Space PAUSE/RESUME Game',
