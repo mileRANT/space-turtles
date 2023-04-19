@@ -59,8 +59,9 @@ while True:
             Game_Over = True
         if Game_Over == True:
             player.hideturtle()
+            ui.gameOver()
             for e in enemy_manager.all_enemies:
                 e.hideturtle()
-                break
+            break
 
 turtle.done

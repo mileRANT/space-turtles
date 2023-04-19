@@ -8,6 +8,8 @@ class Enemy(Turtle):
         self.penup()
         self.speed(0)
         self.color("RED")
+        self.shape("turtle")
+        self.setheading(270)
         x = random.randint(-200, 200)
         y = random.randint(100, 250)
         self.setposition(x, y)
@@ -48,4 +50,3 @@ class Enemy(Turtle):
         x = random.randint(-200, 200)
         y = 280
         self.setposition(x, y)
-        

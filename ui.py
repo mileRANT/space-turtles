@@ -36,3 +36,9 @@ class UI(Turtle):
         # # self.goto(x=0, y=-180)
         # self.write('Press Space PAUSE/RESUME Game',
         #            align=ALIGNMENT, font=('Calibri', 14, 'normal'))
+
+    def gameOver(self):
+        self.goto(x=0, y=-150)
+        # self.goto(x=0, y=-180)
+        self.write('GAME OVER',
+                   align=ALIGNMENT, font=('Calibri', 14, 'normal'))
